@@ -91,12 +91,12 @@
     },
     methods: {
       getTasks() {
-        this.isLoading = true        
+        // this.isLoading = true        
         TasksServices.getTasks().then( response => {
-          // this.tasks = response.data
-          this.tasks = response.data.filter(dataFilter => dataFilter.status != 3 )
+          this.tasks = response.data
+          // this.tasks = response.data.filter(dataFilter => dataFilter.status != 3 )
           console.log('this.tasks', this.tasks)
-          this.isLoading = false           
+          // this.isLoading = false           
         }).catch(error => {
           console.log('error', error)
         })
